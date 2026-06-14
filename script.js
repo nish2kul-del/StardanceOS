@@ -14,11 +14,11 @@ function dragElement(element) {
 
     if (document.getElementById(element.id + "header")) {
         document.getElementById(element.id + "header").onmousedown = startDragging;
-
     } else {
         element.onmousedown = startDragging;
     }
-
+        
+ 
 
     function startDragging(e) {
         e = e || window.event;
@@ -33,7 +33,7 @@ function dragElement(element) {
 
     function dragElement (e) {
         e = e || window.event;
-        e.preventDefault;
+        e.preventDefault();
 
         currentX = initialX - e.clientX;
         currentY = initialY - e.clientY;
@@ -49,3 +49,25 @@ function dragElement(element) {
         document.onmousemove = null;
     }
 }
+
+var welcomeScreen = document.querySelector("#welcome");
+var welcomeScreenClose = document.querySelector("#welcomeclose");
+var welcomeScreenOpen = document.querySelector("#welcomeopen");
+
+function closeWindow() {
+    element.style.display = "none";
+
+}
+
+function openWindow() {
+    element.style.display = "flex"
+}
+
+
+welcomeScreenClose.addEventListener("click", function() {
+    closeWindow(welcomeScreen)
+});
+
+welcomeScreenOpen.addEventListener("click", function() {
+    openWindow(welcomeScreen);
+});
